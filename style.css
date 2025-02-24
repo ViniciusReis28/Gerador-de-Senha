@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    justify-content: center;  
+    align-items: center;       
+    height: 100vh;             
+    margin: 0;
+    background-color: #ebebeb;
+    flex-direction: column;  
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%; 
+    max-width: 400px; 
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode .container {
+    background: #333;
+    color: white;
+}
+
+.logo {
+  position: absolute;  
+  top: 20px;
+  transition: filter 0.3s;
+}
+
+.dark-mode .logo {
+  filter: invert(1);
+}
+
+.input_number {
+    width: 45%;  
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #a8a8a8;
+    border-radius: 5px;
+    text-align: center;
+    background: white;
+    color: black;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode .input_number {
+    background: #444;
+    color: white;
+    border: 2px solid #777;
+}
+
+.glow-on-hover {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dark-mode .glow-on-hover {
+    background-color: #1db954;
+}
+
+.glow-on-hover:hover {
+    background-color: #218838;
+}
+
+.verde {
+    margin-top: -10px;
+    font-size: 22px;
+    color: rgb(16, 141, 48);
+}
+
+
+.toggle-button {
+  font-family: "Bebas Neue", sans-serif;
+  position: fixed; 
+  top: 15px;
+  right: 15px;
+  padding: 10px;
+  font-size: 18px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.dark-mode .toggle-button {
+  background: white;
+  color: black;
+}
+
+
+
+/* Responsividade do site!*/
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 220px;
+    }
+
+    .input_number {
+        font-size: 14px;
+    }
+
+    .glow-on-hover {
+        font-size: 16px;
+    }
+
+    .verde {
+        font-size: 20px;
+    }
+    .toggle-button {
+      top: 580px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+  }
+}
+
+
+/*BUTTON*/
+
+.glow-on-hover {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  
+  .glow-on-hover:before {
+    
+    content: '';
+    background: linear-gradient(45deg, #2afc00, #3cc01b, #108f21, #5ba82e, #47f503, #66ff00, #5fcf85, #6cf3a4, #16b338);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .glow-on-hover:active {
+    color: #ffffff
+  }
+  
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+  
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+  
+  .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+  
+    50% {
+      background-position: 400% 0;
+    }
+  
+    100% {
+      background-position: 0 0;
+}
+}
